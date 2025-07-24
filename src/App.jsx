@@ -98,10 +98,10 @@ function App() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-8 text-white">
             <a
-              className="bg-transparent border-2 border-emerald-400 text-gray-200 py-3 px-8 rounded-full text-xl font-semibold hover:bg-emerald-400 hover:text-gray-900 transition-all duration-300 shadow-lg hover:shadow-emerald-400/25 transform hover:-translate-y-1"
-              href="https://drive.google.com/file/d/1PoA6RWtw_gUWGRUegyoUYU92vrvFBYxh/view?usp=sharing"
+              className="bg-transparent border-2 border-emerald-400 text-emerald-500  py-3 px-8 rounded-full text-xl font-semibold hover:bg-emerald-400 hover:text-gray-900 transition-all duration-300 shadow-lg hover:shadow-emerald-400/25 transform hover:-translate-y-1"
+              href="https://drive.google.com/file/d/1IDtUSG2zqI5OL-BI_8JuETnA7s-Erq0S/view"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -109,7 +109,7 @@ function App() {
             </a>
             <a
               href="#Contact"
-              className="bg-emerald-600 border-2 border-emerald-600 text-white py-3 px-8 rounded-full text-xl font-semibold hover:bg-transparent hover:text-emerald-400 transition-all duration-300 shadow-lg hover:shadow-emerald-600/25 transform hover:-translate-y-1"
+              className="bg-emerald-600 border-2 border-emerald-600 text-gray-200 py-3 px-8 rounded-full text-xl font-semibold hover:bg-transparent hover:text-emerald-400 transition-all duration-300 shadow-lg hover:shadow-emerald-600/25 transform hover:-translate-y-1"
             >
               Contact Me
             </a>
@@ -306,25 +306,25 @@ function App() {
                 img: "https://i.pinimg.com/originals/d0/0b/d5/d00bd5d615a005646c0b98a43e8c152b.jpg",
                 title: "JwelKart",
                 description: "Online Jwellery Shop",
-                link: "https://github.com/UMANG797/jweller_shop",
+                link: "https://github.com/UDAY4512/Jwelercrt",
               },
               {
                 img: "https://www.amitree.com/wp-content/uploads/2021/12/what-is-a-task-tracker-and-why-you-need-one.jpeg",
                 title: "Task-Tracker",
                 description: "crate and delete task",
-                link: "",
+                link: "https://github.com/UDAY4512/TASK-TRACKER",
               },
                {
                 img: "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg",
                 title: "Spotify-clone",
                 description: "platform clone of ui of spotify",
-                link: "",
+                link: "https://github.com/UDAY4512/SPOTIFY-CLONE",
               },
               {
                 img: "https://cdn.dribbble.com/userupload/17904218/file/original-1115752d98bab7877e3dddc43f7dbffb.jpeg?resize=1504x1128&vertical=center",
                 title: "Portfolio",
                 description: "My portfolio",
-                link: "https://github.com/UMANG797/portfolio_website",
+                link: "https://github.com/UDAY4512/Portfolio",
               },
               {
                 img: "https://media.hudle.in/photos/49940",
@@ -425,7 +425,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Footer Navigation */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-            <div className="text-2xl lg:text-3xl font-bold tracking-wider mb-4 md:mb-0">
+            <div className="text-2xl lg:text-3xl text-blue-500 font-bold tracking-wider mb-4 md:mb-0">
               Rathod Uday
             </div>
           </div>
