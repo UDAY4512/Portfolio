@@ -11,6 +11,7 @@ import {
 import { FaHtml5,FaCss3Alt ,FaNodeJs, FaReact  } from "react-icons/fa";
 import { SiTailwindcss,SiExpress,SiGraphql  } from "react-icons/si";
 
+
 function App() {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -77,7 +78,7 @@ function App() {
         <div className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0">
           <div className="relative group">
             <img
-              src="/uday1.jpg"
+              src="https://res.cloudinary.com/djthtyogx/image/upload/v1753433438/uday_w9cd95.jpg"
               alt="Rathod Uday"
               className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-gray-700 transform transition-transform duration-300 group-hover:scale-105"
             />
@@ -207,7 +208,7 @@ function App() {
             </div>
             <div className="w-full lg:w-1/3">
               <img
-                src="/img2.png"
+                src="https://res.cloudinary.com/djthtyogx/image/upload/v1753433676/img2_uj04pa.png"
                 alt="img2"
                 className="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover shadow-xl mx-auto border-4 border-gray-700 transform transition-transform duration-300 hover:scale-105"
               />
@@ -346,9 +347,14 @@ function App() {
                   <h4 className="font-bold text-2xl text-center mb-4 text-white group-hover:text-emerald-400 transition-colors duration-300">
                     {project.title}
                   </h4>
-                  <button className="w-full bg-emerald-600 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-emerald-500 transition-colors duration-300 shadow-lg hover:shadow-emerald-500/30 transform hover:scale-105">
-                    <a href={project.link}>Github</a>
-                  </button>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center bg-emerald-600 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-emerald-500 transition-colors duration-300 shadow-lg hover:shadow-emerald-500/30 transform hover:scale-105"
+                  >
+                     Github
+                  </a>
                 </div>
               </div>
             ))}
