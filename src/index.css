@@ -10,9 +10,21 @@ html {
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #f4f0e8;
+  background: #151515;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #111827;
-  color: #e5e7eb;
+  background: #151515;
+  color: #f4f0e8;
 }
+
+.font-display { font-family: 'Space Grotesk', sans-serif; }

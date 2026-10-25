@@ -8,6 +8,7 @@ import {
   Linkedin,
   Mail,
   X,
+  ArrowUpRight,
 } from "lucide-react";
 import {
   FaHtml5,
@@ -19,7 +20,13 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss, SiExpress, SiMongodb, SiVite } from "react-icons/si";
 
-const NAV_ITEMS = ["About", "Skills", "Projects", "Contact"];
+const NAV_ITEMS = [
+  { label: "Home", href: "#top" },
+  { label: "About", href: "#About" },
+  { label: "Skills", href: "#Skills" },
+  { label: "Projects", href: "#Projects" },
+  { label: "Connect", href: "#Contact" },
+];
 
 const LINKS = {
   cv: "https://drive.google.com/file/d/1IDtUSG2zqI5OL-BI_8JuETnA7s-Erq0S/view",
@@ -153,7 +160,7 @@ function App() {
   }, [isMenuOpen]);
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#151515]">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-emerald-500 focus:px-4 focus:py-2 focus:text-gray-900"
@@ -163,59 +170,53 @@ function App() {
 
       <header>
         <nav
-          className="sticky top-0 z-50 border-b border-gray-700 bg-gray-800/90 shadow-xl backdrop-blur-md"
+          className="sticky top-0 z-50 border-b border-[#2C2C29] bg-[#151515]/90 backdrop-blur-md"
           aria-label="Primary"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-4 md:py-5">
-              <a
-                href="#top"
-                className="text-2xl font-bold tracking-wider text-white sm:text-3xl md:text-xl lg:text-3xl"
-              >
-                Rathod Uday
+            <div className="flex items-center justify-between py-5">
+              <a href="#top" className="font-display text-xl font-semibold tracking-[-0.04em] text-[#F4F0E8] sm:text-2xl">
+                RU<span className="text-[#C7F36B]">.</span>
               </a>
 
-              <div className="hidden space-x-8 md:flex lg:space-x-12">
+              <div className="hidden items-center gap-8 md:flex">
                 {NAV_ITEMS.map((item) => (
                   <a
-                    key={item}
-                    href={`#${item}`}
-                    className="group relative text-lg font-medium text-gray-300 transition-colors duration-300 hover:text-emerald-400 lg:text-xl"
+                    key={item.label}
+                    href={item.href}
+                    className="nav-link group relative text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#A6A39B] transition-colors duration-300 hover:text-[#F4F0E8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]"
                   >
-                    {item}
-                    <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-emerald-400 transition-all duration-300 group-hover:w-full" />
+                    {item.label}
+                    <span className="absolute -bottom-2 left-0 h-px w-0 bg-[#C7F36B] transition-all duration-300 group-hover:w-full" />
                   </a>
                 ))}
               </div>
 
+              <a href="#Contact" className="hidden items-center gap-2 rounded-full bg-[#C7F36B] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-[#151515] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#D8FF86] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515] md:flex">
+                Let&apos;s Connect <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+
               <button
                 type="button"
                 onClick={toggleMenu}
-                className="rounded-lg p-2 text-white transition-colors duration-300 hover:bg-gray-700 md:hidden"
+                className="rounded-full border border-[#3B3B37] p-2.5 text-[#F4F0E8] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] md:hidden"
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               >
-                {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+                {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
               </button>
             </div>
 
             {isMenuOpen && (
-              <div
-                id="mobile-menu"
-                className="absolute left-0 right-0 top-full border-t border-gray-700 bg-gray-800/95 shadow-lg backdrop-blur-md md:hidden"
-              >
-                <div className="space-y-2 px-4 py-4">
+              <div id="mobile-menu" className="mobile-menu absolute left-0 right-0 top-full border-t border-[#343430] bg-[#151515] md:hidden">
+                <div className="space-y-1 px-5 py-4">
                   {NAV_ITEMS.map((item) => (
-                    <a
-                      key={item}
-                      href={`#${item}`}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="block py-2 text-lg font-medium text-gray-300 transition-colors duration-300 hover:text-emerald-400"
-                    >
-                      {item}
+                    <a key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between border-b border-[#292925] py-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#D0CDC4] transition-colors duration-300 last:border-0 hover:text-[#C7F36B]">
+                      {item.label}<ArrowUpRight size={16} aria-hidden="true" />
                     </a>
                   ))}
+                  <a href="#Contact" onClick={() => setIsMenuOpen(false)} className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#C7F36B] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#151515]">Let&apos;s Connect <ArrowUpRight size={15} aria-hidden="true" /></a>
                 </div>
               </div>
             )}
@@ -224,61 +225,30 @@ function App() {
       </header>
 
       <main id="main-content">
-        <section
-          id="top"
-          className="mx-auto flex max-w-7xl scroll-mt-24 flex-col items-center justify-between px-4 py-12 sm:px-6 lg:flex-row lg:px-8 lg:py-20"
-          aria-labelledby="hero-name"
-        >
-          <div className="mb-10 flex w-full justify-center lg:mb-0 lg:w-1/2">
-            <div className="relative">
-              <img
-                src="https://res.cloudinary.com/djthtyogx/image/upload/v1753433438/uday_w9cd95.jpg"
-                alt="Portrait of Rathod Uday"
-                width={384}
-                height={384}
-                className="h-64 w-64 rounded-full border-4 border-gray-700 object-cover shadow-2xl sm:h-80 sm:w-80 lg:h-96 lg:w-96"
-              />
-            </div>
-          </div>
+        <section id="top" className="hero-section relative mx-auto flex min-h-[calc(100vh-76px)] max-w-7xl scroll-mt-24 flex-col justify-center px-5 py-16 sm:px-8 lg:px-12 lg:py-20" aria-labelledby="hero-name">
+          <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+          <div className="relative z-10 grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div className="order-2 text-center lg:order-1 lg:text-left">
+              <p className="animate-fade-up mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#C7F36B]" style={{ "--delay": "80ms" }}>
+                Full-stack developer / 2026 graduate
+              </p>
+              <h1 id="hero-name" className="animate-fade-up font-display max-w-4xl text-[clamp(3.6rem,9vw,8.7rem)] font-semibold leading-[0.88] tracking-[-0.075em] text-[#F4F0E8]" style={{ "--delay": "160ms" }}>
+                Rathod<br /><span className="text-[#8B8982]">Uday<span className="text-[#C7F36B]">.</span></span>
+              </h1>
+              <p className="animate-fade-up mx-auto mt-8 max-w-xl text-base leading-7 text-[#A6A39B] sm:text-lg lg:mx-0" style={{ "--delay": "260ms" }}>
+                I build thoughtful, full-stack web experiences with the MERN stack — from clear APIs to interfaces that feel effortless to use.
+              </p>
 
-          <div className="w-full text-center lg:w-1/2 lg:text-left">
-            <p className="mb-3 font-serif text-xl tracking-wider text-gray-400 sm:text-2xl lg:text-3xl">
-              Hello, I am
-            </p>
-            <h1
-              id="hero-name"
-              className="mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-4xl font-bold tracking-wider text-transparent sm:text-5xl"
-            >
-              Rathod Uday
-            </h1>
-            <p className="mb-5 text-xl tracking-wide text-emerald-400 sm:text-2xl lg:text-3xl">
-              Full-Stack Developer | MERN Stack
-            </p>
-            <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg lg:mx-0">
-              2026 Computer Engineering graduate seeking junior software
-              development roles. I build full-stack web applications with the
-              MERN stack and am looking for an opportunity to contribute,
-              learn, and grow on a product team.
-            </p>
+              <div className="animate-fade-up mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start" style={{ "--delay": "360ms" }}>
+                <a href="#Projects" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D8FF86] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
+                  Explore My Work <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                </a>
+                <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#4B4B45] px-6 py-3.5 text-sm font-bold text-[#F4F0E8] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
+                  Download CV <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                </a>
+              </div>
 
-            <div className="mb-8 flex flex-col justify-center gap-4 text-white sm:flex-row sm:gap-6 lg:justify-start">
-              <a
-                className="rounded-full border-2 border-emerald-400 px-8 py-3 text-center text-lg font-semibold text-emerald-400 transition-colors duration-300 hover:bg-emerald-400 hover:text-gray-900 sm:text-xl"
-                href={LINKS.cv}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View CV
-              </a>
-              <a
-                href="#Contact"
-                className="rounded-full border-2 border-emerald-600 bg-emerald-600 px-8 py-3 text-center text-lg font-semibold text-gray-100 transition-colors duration-300 hover:bg-transparent hover:text-emerald-400 sm:text-xl"
-              >
-                Contact Me
-              </a>
-            </div>
-
-            <div className="flex justify-center space-x-6 lg:justify-start">
+              <div className="animate-fade-up mt-10 flex justify-center gap-5 lg:justify-start" style={{ "--delay": "460ms" }}>
               <a
                 href={LINKS.github}
                 target="_blank"
@@ -306,6 +276,14 @@ function App() {
               >
                 <Code size={40} className="sm:h-12 sm:w-12" aria-hidden="true" />
               </a>
+                          </div>
+            </div>
+
+            <div className="hero-photo order-1 mx-auto w-full max-w-[21rem] lg:order-2 lg:max-w-[27rem]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-[#3B3B37] bg-[#242421] p-2">
+                <img src="https://res.cloudinary.com/djthtyogx/image/upload/v1753433438/uday_w9cd95.jpg" alt="Portrait of Rathod Uday" width={432} height={540} className="h-full w-full rounded-[1rem] object-cover grayscale-[15%] transition duration-700 hover:scale-[1.03]" />
+                <span className="absolute bottom-5 left-5 rounded-full border border-[#C7F36B]/50 bg-[#151515]/85 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#C7F36B] backdrop-blur-sm">Available for work</span>
+              </div>
             </div>
           </div>
         </section>
@@ -531,12 +509,9 @@ function App() {
             <nav aria-label="Footer">
               <ul className="flex flex-wrap justify-center gap-6">
                 {NAV_ITEMS.map((item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item}`}
-                      className="text-gray-300 transition-colors duration-300 hover:text-emerald-400"
-                    >
-                      {item}
+                  <li key={item.label}>
+                    <a href={item.href} className="text-gray-300 transition-colors duration-300 hover:text-[#C7F36B]">
+                      {item.label}
                     </a>
                   </li>
                 ))}
