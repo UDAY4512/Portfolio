@@ -9,6 +9,9 @@ import {
   Mail,
   X,
   ArrowUpRight,
+  Clipboard,
+  Check,
+  Send,
 } from "lucide-react";
 import {
   FaHtml5,
@@ -143,6 +146,23 @@ const projects = [
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("rathoduj65@gmail.com");
+    setIsCopied(true);
+    window.setTimeout(() => setIsCopied(false), 2200);
+  };
+
+  const handleContactSubmit = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const subject = encodeURIComponent(`Portfolio enquiry from ${form.get("name")}`);
+    const body = encodeURIComponent(`Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`);
+    setFormStatus("Opening your email client...");
+    window.location.href = `${LINKS.email}?subject=${subject}&body=${body}`;
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen((open) => !open);
@@ -232,6 +252,9 @@ function App() {
               <p className="animate-fade-up mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#C7F36B]" style={{ "--delay": "80ms" }}>
                 Full-stack developer / 2026 graduate
               </p>
+              <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#3B3B37] px-3 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[#A6A39B]" style={{ "--delay": "120ms" }}>
+                <span className="h-1.5 w-1.5 rounded-full bg-[#C7F36B]" aria-hidden="true" /> Open to junior developer opportunities
+              </div>
               <h1 id="hero-name" className="animate-fade-up font-display max-w-4xl text-[clamp(3.6rem,9vw,8.7rem)] font-semibold leading-[0.88] tracking-[-0.075em] text-[#F4F0E8]" style={{ "--delay": "160ms" }}>
                 Rathod<br /><span className="text-[#8B8982]">Uday<span className="text-[#C7F36B]">.</span></span>
               </h1>
@@ -289,8 +312,8 @@ function App() {
               <h2 id="about-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">A developer who cares about the details.</h2>
             </div>
 
-            <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-              <div className="w-full space-y-6 text-lg text-gray-300 lg:w-2/3 lg:text-xl">
+            <div className="max-w-4xl">
+              <div className="w-full space-y-6 text-lg text-gray-300 lg:text-xl">
                 <p className="leading-relaxed">
                   I am Rathod Uday, a Computer Engineering graduate (2026)
                   from V.V.P. Engineering College, Rajkot, with an 8.50/10
@@ -330,15 +353,6 @@ function App() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="w-full lg:w-1/3">
-                <img
-                  src="https://res.cloudinary.com/djthtyogx/image/upload/v1753433676/img2_uj04pa.png"
-                  alt="Decorative illustration from the portfolio"
-                  width={384}
-                  height={384}
-                  className="mx-auto h-72 w-72 rounded-full border-4 border-gray-700 object-cover shadow-xl sm:h-80 sm:w-80 lg:h-96 lg:w-96"
-                />
               </div>
             </div>
           </div>
@@ -394,21 +408,17 @@ function App() {
                   key={project.title}
                   className="group flex h-full flex-col rounded-[1.25rem] border border-[#383833] bg-[#242421] p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#C7F36B]/60 sm:p-5"
                 >
-                  <div className="relative mb-5 overflow-hidden rounded-xl">
-                    <img
-                      className="h-52 w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.02] sm:h-60"
-                      src={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'%3E%3Crect width='1200' height='675' fill='%23242421'/%3E%3Cpath d='M0 520h1200' stroke='%23C7F36B' stroke-opacity='.35' stroke-width='2'/%3E%3Ctext x='72' y='168' fill='%23C7F36B' font-family='Arial' font-size='34' letter-spacing='8'%3ETEMPORARY PROJECT VISUAL%3C/text%3E%3Ctext x='72' y='390' fill='%23F4F0E8' font-family='Arial' font-size='150' font-weight='700'%3E${project.visual}%3C/text%3E%3C/svg%3E`}
-                      alt={`${project.title} project visual placeholder`}
-                    />
-                    {project.featured && (
-                      <span className="absolute left-3 top-3 rounded-full bg-[#C7F36B] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#151515]">
-                        Featured
-                      </span>
-                    )}
+                  <div className="project-placeholder relative mb-5 flex aspect-[16/9] items-end overflow-hidden rounded-xl border border-[#3B3B37] bg-[#191917] p-5 transition duration-500 group-hover:scale-[1.015]">
+                    <div className="absolute inset-0 opacity-60" style={{ backgroundImage: "linear-gradient(135deg, transparent 45%, rgba(199,243,107,.12) 45%, rgba(199,243,107,.12) 46%, transparent 46%), linear-gradient(315deg, transparent 63%, rgba(244,240,232,.06) 63%, rgba(244,240,232,.06) 64%, transparent 64%)" }} />
+                    <div className="relative flex items-center gap-3">
+                      <span className="grid h-9 w-9 place-items-center rounded-lg border border-[#C7F36B]/50 text-[#C7F36B]"><Code size={17} aria-hidden="true" /></span>
+                      <div><p className="text-sm font-semibold text-[#F4F0E8]">Project preview</p><p className="text-xs text-[#8B8982]">Screenshot coming soon</p></div>
+                    </div>
+                    {project.featured && <span className="absolute right-3 top-3 rounded-full bg-[#C7F36B] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#151515]">Featured</span>}
                   </div>
-                  <h3 className="mb-2 text-center text-2xl font-bold text-white">{project.title}</h3>
-                  <p className="mb-2 text-center text-sm font-medium text-emerald-400">{project.tech}</p>
-                  <p className="mb-6 flex-grow text-center text-sm leading-relaxed text-gray-300 sm:text-base">
+                  <h3 className="mb-2 text-2xl font-bold text-[#F4F0E8]">{project.title}</h3>
+                  <p className="mb-3 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-[#C7F36B]">{project.tech}</p>
+                  <p className="mb-6 flex-grow text-sm leading-relaxed text-[#A6A39B] sm:text-base">
                     {project.description}
                   </p>
                   <a
@@ -425,51 +435,28 @@ function App() {
           </div>
         </section>
 
-        <section
-          id="Contact"
-          className="scroll-mt-24 border-t border-[#2C2C29] bg-[#151515] py-20 lg:py-28"
-          aria-labelledby="contact-heading"
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">04 / Connect</p>
-              <h2 id="contact-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">Let&apos;s build something useful.</h2>
+        <section id="Contact" className="scroll-mt-24 border-t border-[#2C2C29] bg-[#151515] py-20 lg:py-28" aria-labelledby="contact-heading">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="mb-12 max-w-4xl">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">04 / Connect</p>
+              <h2 id="contact-heading" className="font-display text-4xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#F4F0E8] sm:text-5xl lg:text-7xl">Have an opportunity or idea? Let&apos;s build something meaningful.</h2>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-[#A6A39B]">Recruiters, developers, and collaborators are all welcome. Send a note and I&apos;ll get back to you as soon as I can.</p>
             </div>
-
-            <div className="flex justify-center">
-              <div className="w-full max-w-4xl rounded-2xl border border-gray-700 bg-gray-800 p-6 shadow-xl lg:p-8">
-                <ul className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:flex-wrap lg:gap-12">
-                  <li className="flex items-center gap-4">
-                    <Mail size={32} className="shrink-0 text-emerald-400" aria-hidden="true" />
-                    <a
-                      className="break-all text-lg text-gray-300 transition-colors duration-300 hover:text-emerald-400 lg:text-xl"
-                      href={LINKS.email}
-                    >
-                      rathoduj65@gmail.com
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-4">
-                    <Linkedin size={32} className="shrink-0 text-emerald-400" aria-hidden="true" />
-                    <a
-                      className="text-lg text-gray-300 transition-colors duration-300 hover:text-emerald-400 lg:text-xl"
-                      href={LINKS.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      LinkedIn Profile
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-4">
-                    <Phone size={28} className="shrink-0 text-green-400" aria-hidden="true" />
-                    <a
-                      className="text-lg text-gray-300 transition-colors duration-300 hover:text-emerald-400 lg:text-xl"
-                      href={LINKS.phone}
-                    >
-                      +91 81608 43664
-                    </a>
-                  </li>
-                </ul>
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+              <div className="space-y-3">
+                <a href={LINKS.email} className="arrow-button group flex items-center justify-between rounded-xl border border-[#3B3B37] bg-[#1B1B19] p-5 text-[#F4F0E8] transition hover:-translate-y-1 hover:border-[#C7F36B]"><span className="flex items-center gap-3"><Mail className="text-[#C7F36B]" size={20} aria-hidden="true" /> Email Me</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
+                <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="arrow-button group flex items-center justify-between rounded-xl border border-[#3B3B37] bg-[#1B1B19] p-5 text-[#F4F0E8] transition hover:-translate-y-1 hover:border-[#C7F36B]"><span className="flex items-center gap-3"><Linkedin className="text-[#C7F36B]" size={20} aria-hidden="true" /> LinkedIn</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
+                <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="arrow-button group flex items-center justify-between rounded-xl border border-[#3B3B37] bg-[#1B1B19] p-5 text-[#F4F0E8] transition hover:-translate-y-1 hover:border-[#C7F36B]"><span className="flex items-center gap-3"><Github className="text-[#C7F36B]" size={20} aria-hidden="true" /> GitHub</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
+                <button type="button" onClick={copyEmail} className="flex w-full items-center justify-between rounded-xl border border-dashed border-[#4B4B45] p-4 text-sm text-[#A6A39B] transition hover:border-[#C7F36B] hover:text-[#F4F0E8]"><span>{isCopied ? "Email copied to clipboard" : "Copy email address"}</span>{isCopied ? <Check size={18} className="text-[#C7F36B]" aria-hidden="true" /> : <Clipboard size={18} aria-hidden="true" />}</button>
               </div>
+              <form onSubmit={handleContactSubmit} className="rounded-2xl border border-[#3B3B37] bg-[#1B1B19] p-6 sm:p-8">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="text-sm text-[#A6A39B]">Name<input required name="name" type="text" autoComplete="name" className="mt-2 w-full rounded-lg border border-[#3B3B37] bg-[#151515] px-4 py-3 text-[#F4F0E8] outline-none transition focus:border-[#C7F36B]" /></label>
+                  <label className="text-sm text-[#A6A39B]">Email<input required name="email" type="email" autoComplete="email" className="mt-2 w-full rounded-lg border border-[#3B3B37] bg-[#151515] px-4 py-3 text-[#F4F0E8] outline-none transition focus:border-[#C7F36B]" /></label>
+                </div>
+                <label className="mt-5 block text-sm text-[#A6A39B]">Message<textarea required name="message" rows="5" className="mt-2 w-full resize-y rounded-lg border border-[#3B3B37] bg-[#151515] px-4 py-3 text-[#F4F0E8] outline-none transition focus:border-[#C7F36B]" /></label>
+                <div className="mt-5 flex flex-wrap items-center gap-4"><button type="submit" className="group inline-flex items-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition hover:-translate-y-1 hover:bg-[#D8FF86]">Send message <Send size={17} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></button>{formStatus && <span role="status" className="text-sm text-[#A6A39B]">{formStatus}</span>}</div>
+              </form>
             </div>
           </div>
         </section>
