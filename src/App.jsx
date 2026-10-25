@@ -77,7 +77,7 @@ const skillGroups = [
 
 const projects = [
   {
-    img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
+    visual: "LMS",
     title: "Learning Management System",
     featured: true,
     tech: "MongoDB, Express, React, Node.js, JWT, Tailwind CSS",
@@ -86,7 +86,7 @@ const projects = [
     link: "https://github.com/UDAY4512/learning-management-system",
   },
   {
-    img: "https://i.pinimg.com/originals/d0/0b/d5/d00bd5d615a005646c0b98a43e8c152b.jpg",
+    visual: "JK",
     title: "JewelKart",
     featured: true,
     tech: "React, Node.js, Express, MongoDB, JWT, Cloudinary",
@@ -95,7 +95,7 @@ const projects = [
     link: "https://github.com/UDAY4512/Jwelercrt",
   },
   {
-    img: "https://acropolium.com/img/articles/chatbots-in-healthcare/img01.jpg",
+    visual: "AI",
     title: "HealthAI",
     featured: true,
     tech: "React, Express, Gemini API, Tesseract.js",
@@ -227,8 +227,8 @@ function App() {
       <main id="main-content">
         <section id="top" className="hero-section relative mx-auto flex min-h-[calc(100vh-76px)] max-w-7xl scroll-mt-24 flex-col justify-center px-5 py-16 sm:px-8 lg:px-12 lg:py-20" aria-labelledby="hero-name">
           <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
-          <div className="relative z-10 grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-            <div className="order-2 text-center lg:order-1 lg:text-left">
+          <div className="relative z-10">
+            <div className="max-w-5xl text-center lg:text-left">
               <p className="animate-fade-up mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#C7F36B]" style={{ "--delay": "80ms" }}>
                 Full-stack developer / 2026 graduate
               </p>
@@ -279,24 +279,14 @@ function App() {
                           </div>
             </div>
 
-            <div className="hero-photo order-1 mx-auto w-full max-w-[21rem] lg:order-2 lg:max-w-[27rem]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-[#3B3B37] bg-[#242421] p-2">
-                <img src="https://res.cloudinary.com/djthtyogx/image/upload/v1753433438/uday_w9cd95.jpg" alt="Portrait of Rathod Uday" width={432} height={540} className="h-full w-full rounded-[1rem] object-cover grayscale-[15%] transition duration-700 hover:scale-[1.03]" />
-                <span className="absolute bottom-5 left-5 rounded-full border border-[#C7F36B]/50 bg-[#151515]/85 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#C7F36B] backdrop-blur-sm">Available for work</span>
-              </div>
-            </div>
           </div>
         </section>
 
-        <section id="About" className="scroll-mt-24 bg-gray-800 py-16 lg:py-24" aria-labelledby="about-heading">
+        <section id="About" className="scroll-mt-24 border-t border-[#2C2C29] bg-[#1B1B19] py-20 lg:py-28" aria-labelledby="about-heading">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-left">
-              <p className="mb-4 font-sans text-2xl tracking-wider text-gray-400 lg:text-3xl">
-                Get to Know More about Me
-              </p>
-              <h2 id="about-heading" className="text-3xl font-bold tracking-wider text-white lg:text-4xl">
-                About Me
-              </h2>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">01 / About</p>
+              <h2 id="about-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">A developer who cares about the details.</h2>
             </div>
 
             <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
@@ -356,17 +346,13 @@ function App() {
 
         <section
           id="Skills"
-          className="scroll-mt-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 lg:py-24"
+          className="scroll-mt-24 border-t border-[#2C2C29] bg-[#151515] py-20 lg:py-28"
           aria-labelledby="skills-heading"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
-              <p className="mb-4 font-serif text-2xl font-semibold tracking-wider text-gray-400 lg:text-3xl">
-                Explore My
-              </p>
-              <h2 id="skills-heading" className="font-sans text-4xl tracking-wider text-white lg:text-5xl">
-                Tech Skills
-              </h2>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">02 / Skills</p>
+              <h2 id="skills-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">The tools behind the work.</h2>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -395,34 +381,27 @@ function App() {
           </div>
         </section>
 
-        <section id="Projects" className="scroll-mt-24 bg-gray-800 py-16 lg:py-24" aria-labelledby="projects-heading">
+        <section id="Projects" className="scroll-mt-24 border-t border-[#2C2C29] bg-[#1B1B19] py-20 lg:py-28" aria-labelledby="projects-heading">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
-              <p className="mb-4 font-serif text-3xl tracking-wider text-gray-400 lg:text-4xl">
-                Check My
-              </p>
-              <h2
-                id="projects-heading"
-                className="font-serif text-4xl tracking-widest text-emerald-400 underline decoration-solid sm:text-5xl lg:text-6xl"
-              >
-                Projects
-              </h2>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">03 / Selected work</p>
+              <h2 id="projects-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] sm:text-5xl lg:text-6xl">Featured projects.</h2>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {projects.map((project) => (
                 <article
                   key={project.title}
-                  className="flex h-full flex-col rounded-2xl border border-gray-600 bg-gray-700 p-6 shadow-lg"
+                  className="group flex h-full flex-col rounded-[1.25rem] border border-[#383833] bg-[#242421] p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#C7F36B]/60 sm:p-5"
                 >
                   <div className="relative mb-5 overflow-hidden rounded-xl">
                     <img
-                      className="h-48 w-full object-cover sm:h-56"
-                      src={project.img}
-                      alt=""
+                      className="h-52 w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.02] sm:h-60"
+                      src={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'%3E%3Crect width='1200' height='675' fill='%23242421'/%3E%3Cpath d='M0 520h1200' stroke='%23C7F36B' stroke-opacity='.35' stroke-width='2'/%3E%3Ctext x='72' y='168' fill='%23C7F36B' font-family='Arial' font-size='34' letter-spacing='8'%3ETEMPORARY PROJECT VISUAL%3C/text%3E%3Ctext x='72' y='390' fill='%23F4F0E8' font-family='Arial' font-size='150' font-weight='700'%3E${project.visual}%3C/text%3E%3C/svg%3E`}
+                      alt={`${project.title} project visual placeholder`}
                     />
                     {project.featured && (
-                      <span className="absolute left-3 top-3 rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white">
+                      <span className="absolute left-3 top-3 rounded-full bg-[#C7F36B] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#151515]">
                         Featured
                       </span>
                     )}
@@ -436,9 +415,9 @@ function App() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full rounded-full bg-emerald-600 px-6 py-3 text-center text-lg font-semibold text-white transition-colors duration-300 hover:bg-emerald-500"
+                    className="group/cta flex w-full items-center justify-center gap-2 rounded-full border border-[#4B4B45] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#F4F0E8] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B]"
                   >
-                    GitHub
+                    View on GitHub <ArrowUpRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1" aria-hidden="true" />
                   </a>
                 </article>
               ))}
@@ -448,17 +427,13 @@ function App() {
 
         <section
           id="Contact"
-          className="scroll-mt-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 lg:py-24"
+          className="scroll-mt-24 border-t border-[#2C2C29] bg-[#151515] py-20 lg:py-28"
           aria-labelledby="contact-heading"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
-              <p className="mb-4 font-sans text-2xl tracking-wider text-gray-400 lg:text-3xl">
-                Get in Touch
-              </p>
-              <h2 id="contact-heading" className="text-4xl font-bold tracking-widest text-white lg:text-5xl">
-                Contact Me
-              </h2>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">04 / Connect</p>
+              <h2 id="contact-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">Let&apos;s build something useful.</h2>
             </div>
 
             <div className="flex justify-center">
