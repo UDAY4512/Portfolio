@@ -44,36 +44,36 @@ const skillGroups = [
   {
     title: "Frontend",
     skills: [
-      { icon: <FaHtml5 size={40} className="text-red-400" aria-hidden="true" />, name: "HTML" },
-      { icon: <FaCss3Alt size={40} className="text-blue-500" aria-hidden="true" />, name: "CSS" },
-      { icon: <FaJs size={40} className="text-yellow-400" aria-hidden="true" />, name: "JavaScript" },
-      { icon: <FaReact size={40} className="text-sky-400" aria-hidden="true" />, name: "React" },
-      { icon: <SiTailwindcss size={40} className="text-cyan-400" aria-hidden="true" />, name: "Tailwind CSS" },
+      { icon: <FaHtml5 size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "HTML" },
+      { icon: <FaCss3Alt size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "CSS" },
+      { icon: <FaJs size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "JavaScript" },
+      { icon: <FaReact size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "React" },
+      { icon: <SiTailwindcss size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "Tailwind CSS" },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { icon: <FaNodeJs size={40} className="text-green-500" aria-hidden="true" />, name: "Node.js" },
-      { icon: <SiExpress size={40} className="text-gray-300" aria-hidden="true" />, name: "Express.js" },
-      { icon: <Code size={40} className="text-emerald-400" aria-hidden="true" />, name: "REST APIs" },
-      { icon: <Code size={40} className="text-amber-400" aria-hidden="true" />, name: "JWT Auth" },
+      { icon: <FaNodeJs size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "Node.js" },
+      { icon: <SiExpress size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "Express.js" },
+      { icon: <Code size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "REST APIs" },
+      { icon: <Code size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "JWT Auth" },
     ],
   },
   {
     title: "Database",
     skills: [
-      { icon: <SiMongodb size={40} className="text-green-400" aria-hidden="true" />, name: "MongoDB" },
-      { icon: <Database size={40} className="text-teal-300" aria-hidden="true" />, name: "MySQL" },
+      { icon: <SiMongodb size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "MongoDB" },
+      { icon: <Database size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "MySQL" },
     ],
   },
   {
     title: "Tools",
     skills: [
-      { icon: <FaGitAlt size={40} className="text-orange-500" aria-hidden="true" />, name: "Git" },
-      { icon: <Github size={40} className="text-gray-200" aria-hidden="true" />, name: "GitHub" },
-      { icon: <SiVite size={40} className="text-violet-400" aria-hidden="true" />, name: "Vite" },
-      { icon: <Code size={40} className="text-amber-500" aria-hidden="true" />, name: "Data Structures" },
+      { icon: <FaGitAlt size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "Git" },
+      { icon: <Github size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "GitHub" },
+      { icon: <SiVite size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "Vite" },
+      { icon: <Code size={40} className="text-[#C7F36B]" aria-hidden="true" />, name: "Data Structures" },
     ],
   },
 ];
@@ -81,7 +81,7 @@ const skillGroups = [
 const projects = [
   {
     visual: "LMS",
-    title: "Learning Management System",
+    title: "Web-Based LMS",
     featured: true,
     tech: "MongoDB, Express, React, Node.js, JWT, Tailwind CSS",
     description:
@@ -183,19 +183,19 @@ function App() {
     <div className="min-h-screen w-full overflow-x-hidden bg-[#151515]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-emerald-500 focus:px-4 focus:py-2 focus:text-gray-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-[#C7F36B] focus:px-4 focus:py-2 focus:text-[#151515]"
       >
         Skip to main content
       </a>
 
       <header>
         <nav
-          className="sticky top-0 z-50 border-b border-[#2C2C29] bg-[#151515]/90 backdrop-blur-md"
+          className="sticky top-0 z-50 border-b border-[#383838] bg-[#151515]/90 backdrop-blur-md"
           aria-label="Primary"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between py-5">
-              <a href="#top" className="font-display text-xl font-semibold tracking-[-0.04em] text-[#F4F0E8] sm:text-2xl">
+              <a href="#top" className="font-display text-xl font-semibold tracking-[-0.04em] text-[#F5F3EC] sm:text-2xl">
                 RU<span className="text-[#C7F36B]">.</span>
               </a>
 
@@ -204,7 +204,7 @@ function App() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="nav-link group relative text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#A6A39B] transition-colors duration-300 hover:text-[#F4F0E8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]"
+                    className="nav-link group relative text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#92918B] transition-colors duration-300 hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]"
                   >
                     {item.label}
                     <span className="absolute -bottom-2 left-0 h-px w-0 bg-[#C7F36B] transition-all duration-300 group-hover:w-full" />
@@ -212,14 +212,14 @@ function App() {
                 ))}
               </div>
 
-              <a href="#Contact" className="hidden items-center gap-2 rounded-full bg-[#C7F36B] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-[#151515] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#D8FF86] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515] md:flex">
+              <a href="#Contact" className="hidden items-center gap-2 rounded-full bg-[#C7F36B] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-[#151515] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515] md:flex">
                 Let&apos;s Connect <ArrowUpRight size={15} aria-hidden="true" />
               </a>
 
               <button
                 type="button"
                 onClick={toggleMenu}
-                className="rounded-full border border-[#3B3B37] p-2.5 text-[#F4F0E8] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] md:hidden"
+                className="rounded-full border border-[#383838] p-2.5 text-[#F5F3EC] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] md:hidden"
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -229,10 +229,10 @@ function App() {
             </div>
 
             {isMenuOpen && (
-              <div id="mobile-menu" className="mobile-menu absolute left-0 right-0 top-full border-t border-[#343430] bg-[#151515] md:hidden">
+              <div id="mobile-menu" className="mobile-menu absolute left-0 right-0 top-full border-t border-[#383838] bg-[#151515] md:hidden">
                 <div className="space-y-1 px-5 py-4">
                   {NAV_ITEMS.map((item) => (
-                    <a key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between border-b border-[#292925] py-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#D0CDC4] transition-colors duration-300 last:border-0 hover:text-[#C7F36B]">
+                    <a key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between border-b border-[#383838] py-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#92918B] transition-colors duration-300 last:border-0 hover:text-[#C7F36B]">
                       {item.label}<ArrowUpRight size={16} aria-hidden="true" />
                     </a>
                   ))}
@@ -252,21 +252,21 @@ function App() {
               <p className="animate-fade-up mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#C7F36B]" style={{ "--delay": "80ms" }}>
                 Full-stack developer / 2026 graduate
               </p>
-              <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#3B3B37] px-3 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[#A6A39B]" style={{ "--delay": "120ms" }}>
+              <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#383838] px-3 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[#92918B]" style={{ "--delay": "120ms" }}>
                 <span className="h-1.5 w-1.5 rounded-full bg-[#C7F36B]" aria-hidden="true" /> Open to junior developer opportunities
               </div>
-              <h1 id="hero-name" className="animate-fade-up font-display max-w-4xl text-[clamp(3.6rem,9vw,8.7rem)] font-semibold leading-[0.88] tracking-[-0.075em] text-[#F4F0E8]" style={{ "--delay": "160ms" }}>
-                Rathod<br /><span className="text-[#8B8982]">Uday<span className="text-[#C7F36B]">.</span></span>
+              <h1 id="hero-name" className="animate-fade-up font-display max-w-4xl text-[clamp(3.6rem,9vw,8.7rem)] font-semibold leading-[0.88] tracking-[-0.075em] text-[#F5F3EC]" style={{ "--delay": "160ms" }}>
+                Rathod<br /><span className="text-[#92918B]">Uday<span className="text-[#C7F36B]">.</span></span>
               </h1>
-              <p className="animate-fade-up mx-auto mt-8 max-w-xl text-base leading-7 text-[#A6A39B] sm:text-lg lg:mx-0" style={{ "--delay": "260ms" }}>
+              <p className="animate-fade-up mx-auto mt-8 max-w-xl text-base leading-7 text-[#92918B] sm:text-lg lg:mx-0" style={{ "--delay": "260ms" }}>
                 I build thoughtful, full-stack web experiences with the MERN stack — from clear APIs to interfaces that feel effortless to use.
               </p>
 
               <div className="animate-fade-up mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start" style={{ "--delay": "360ms" }}>
-                <a href="#Projects" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D8FF86] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
+                <a href="#Projects" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition-all duration-300 hover:-translate-y-1 hover:bg-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
                   Explore My Work <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </a>
-                <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#4B4B45] px-6 py-3.5 text-sm font-bold text-[#F4F0E8] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
+                <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#383838] px-6 py-3.5 text-sm font-bold text-[#F5F3EC] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
                   Download CV <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </a>
               </div>
@@ -277,7 +277,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"
-                className="text-gray-400 transition-colors duration-300 hover:text-emerald-400"
+                className="text-[#92918B] transition-colors duration-300 hover:text-[#C7F36B]"
               >
                 <Github size={40} className="sm:h-12 sm:w-12" aria-hidden="true" />
               </a>
@@ -286,7 +286,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
-                className="text-gray-400 transition-colors duration-300 hover:text-emerald-400"
+                className="text-[#92918B] transition-colors duration-300 hover:text-[#C7F36B]"
               >
                 <Linkedin size={40} className="sm:h-12 sm:w-12" aria-hidden="true" />
               </a>
@@ -295,7 +295,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LeetCode profile"
-                className="text-gray-400 transition-colors duration-300 hover:text-amber-400"
+                className="text-[#92918B] transition-colors duration-300 hover:text-[#C7F36B]"
               >
                 <Code size={40} className="sm:h-12 sm:w-12" aria-hidden="true" />
               </a>
@@ -305,15 +305,15 @@ function App() {
           </div>
         </section>
 
-        <section id="About" className="scroll-mt-24 border-t border-[#2C2C29] bg-[#1B1B19] py-20 lg:py-28" aria-labelledby="about-heading">
+        <section id="About" className="scroll-mt-24 border-t border-[#383838] bg-[#151515] py-20 lg:py-28" aria-labelledby="about-heading">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-left">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">01 / About</p>
-              <h2 id="about-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">A developer who cares about the details.</h2>
+              <h2 id="about-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F5F3EC] lg:text-6xl">A developer who cares about the details.</h2>
             </div>
 
             <div className="max-w-4xl">
-              <div className="w-full space-y-6 text-lg text-gray-300 lg:text-xl">
+              <div className="w-full space-y-6 text-lg text-[#92918B] lg:text-xl">
                 <p className="leading-relaxed">
                   I am Rathod Uday, a Computer Engineering graduate (2026)
                   from V.V.P. Engineering College, Rajkot, with an 8.50/10
@@ -330,25 +330,25 @@ function App() {
                   and shipping projects end to end.
                 </p>
 
-                <div className="rounded-lg bg-gray-700/50 p-6 shadow-inner backdrop-blur-sm">
-                  <h3 className="mb-4 text-xl font-bold text-white">Education</h3>
+                <div className="rounded-xl border border-[#383838] bg-[#292929] p-6 shadow-inner">
+                  <h3 className="mb-4 text-xl font-bold text-[#F5F3EC]">Education</h3>
                   <div className="space-y-4">
                     <div>
-                      <p className="font-semibold text-emerald-400">
+                      <p className="font-semibold text-[#C7F36B]">
                         Bachelor of Engineering in Computer Engineering
                       </p>
                       <p>V.V.P. Engineering College, Rajkot · 2026</p>
                       <p>
                         CGPA:{" "}
-                        <span className="font-semibold text-green-400">8.50 / 10</span>
+                        <span className="font-semibold text-[#C7F36B]">8.50 / 10</span>
                       </p>
                     </div>
                     <div>
-                      <p className="font-semibold text-emerald-400">Higher Secondary</p>
+                      <p className="font-semibold text-[#C7F36B]">Higher Secondary</p>
                       <p>Navyug Vidyalaya, Morbi</p>
                       <p>
                         Result:{" "}
-                        <span className="font-semibold text-green-400">72.72 PR</span>
+                        <span className="font-semibold text-[#C7F36B]">72.72 PR</span>
                       </p>
                     </div>
                   </div>
@@ -360,30 +360,30 @@ function App() {
 
         <section
           id="Skills"
-          className="scroll-mt-24 border-t border-[#2C2C29] bg-[#151515] py-20 lg:py-28"
+          className="scroll-mt-24 border-t border-[#383838] bg-[#151515] py-20 lg:py-28"
           aria-labelledby="skills-heading"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">02 / Skills</p>
-              <h2 id="skills-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] lg:text-6xl">The tools behind the work.</h2>
+              <h2 id="skills-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F5F3EC] lg:text-6xl">The tools behind the work.</h2>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {skillGroups.map((group) => (
                 <div
                   key={group.title}
-                  className="rounded-xl border border-gray-700 bg-gray-800 p-6 shadow-lg"
+                  className="rounded-xl border border-[#383838] bg-[#292929] p-6 shadow-lg transition-colors duration-300 hover:border-[#C7F36B]/50"
                 >
-                  <h3 className="mb-5 text-xl font-semibold text-emerald-400">{group.title}</h3>
+                  <h3 className="mb-5 text-xl font-semibold text-[#C7F36B]">{group.title}</h3>
                   <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                     {group.skills.map((skill) => (
                       <li
                         key={skill.name}
-                        className="flex flex-col items-center rounded-lg border border-gray-700 bg-gray-900/60 p-4 text-center"
+                        className="flex flex-col items-center rounded-lg border border-[#383838] bg-[#292929] p-4 text-center transition-colors duration-300 hover:border-[#C7F36B]/50"
                       >
                         <div className="mb-3">{skill.icon}</div>
-                        <span className="text-sm font-semibold text-gray-300 sm:text-base">
+                        <span className="text-sm font-semibold text-[#92918B] sm:text-base">
                           {skill.name}
                         </span>
                       </li>
@@ -395,37 +395,40 @@ function App() {
           </div>
         </section>
 
-        <section id="Projects" className="scroll-mt-24 border-t border-[#2C2C29] bg-[#1B1B19] py-20 lg:py-28" aria-labelledby="projects-heading">
+        <section id="Projects" className="scroll-mt-24 border-t border-[#383838] bg-[#151515] py-20 lg:py-28" aria-labelledby="projects-heading">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">03 / Selected work</p>
-              <h2 id="projects-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F4F0E8] sm:text-5xl lg:text-6xl">Featured projects.</h2>
+              <h2 id="projects-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F5F3EC] sm:text-5xl lg:text-6xl">Featured projects.</h2>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {projects.map((project) => (
                 <article
                   key={project.title}
-                  className="group flex h-full flex-col rounded-[1.25rem] border border-[#383833] bg-[#242421] p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#C7F36B]/60 sm:p-5"
+                  className="group flex h-full flex-col rounded-[1.25rem] border border-[#383838] bg-[#292929] p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#C7F36B]/60 sm:p-5"
                 >
-                  <div className="project-placeholder relative mb-5 flex aspect-[16/9] items-end overflow-hidden rounded-xl border border-[#3B3B37] bg-[#191917] p-5 transition duration-500 group-hover:scale-[1.015]">
-                    <div className="absolute inset-0 opacity-60" style={{ backgroundImage: "linear-gradient(135deg, transparent 45%, rgba(199,243,107,.12) 45%, rgba(199,243,107,.12) 46%, transparent 46%), linear-gradient(315deg, transparent 63%, rgba(244,240,232,.06) 63%, rgba(244,240,232,.06) 64%, transparent 64%)" }} />
-                    <div className="relative flex items-center gap-3">
-                      <span className="grid h-9 w-9 place-items-center rounded-lg border border-[#C7F36B]/50 text-[#C7F36B]"><Code size={17} aria-hidden="true" /></span>
-                      <div><p className="text-sm font-semibold text-[#F4F0E8]">Project preview</p><p className="text-xs text-[#8B8982]">Screenshot coming soon</p></div>
-                    </div>
+                  <div className="project-placeholder relative mb-5 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-xl border border-[#383838] bg-[#151515] p-5 transition duration-500 group-hover:border-[#C7F36B]/50" role="img" aria-label={`Temporary screenshot placeholder for ${project.title}`}>
+                    {project.image ? (
+                      <img src={project.image} alt={`${project.title} application screenshot`} className="absolute inset-0 h-full w-full object-cover" />
+                    ) : (
+                      <div className="flex flex-col items-center gap-3 text-center">
+                        <span className="grid h-11 w-11 place-items-center rounded-xl border border-[#383838] text-[#C7F36B]"><Code size={20} aria-hidden="true" /></span>
+                        <div><p className="text-sm font-semibold text-[#F5F3EC]">{project.title}</p><p className="mt-1 text-xs text-[#92918B]">Temporary placeholder · replace with screenshot</p></div>
+                      </div>
+                    )}
                     {project.featured && <span className="absolute right-3 top-3 rounded-full bg-[#C7F36B] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#151515]">Featured</span>}
                   </div>
-                  <h3 className="mb-2 text-2xl font-bold text-[#F4F0E8]">{project.title}</h3>
+                  <h3 className="mb-2 text-2xl font-bold text-[#F5F3EC]">{project.title}</h3>
                   <p className="mb-3 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-[#C7F36B]">{project.tech}</p>
-                  <p className="mb-6 flex-grow text-sm leading-relaxed text-[#A6A39B] sm:text-base">
+                  <p className="mb-6 flex-grow text-sm leading-relaxed text-[#92918B] sm:text-base">
                     {project.description}
                   </p>
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/cta flex w-full items-center justify-center gap-2 rounded-full border border-[#4B4B45] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#F4F0E8] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B]"
+                    className="group/cta flex w-full items-center justify-center gap-2 rounded-full border border-[#383838] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#F5F3EC] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#292929]"
                   >
                     View on GitHub <ArrowUpRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1" aria-hidden="true" />
                   </a>
@@ -435,44 +438,44 @@ function App() {
           </div>
         </section>
 
-        <section id="Contact" className="scroll-mt-24 border-t border-[#2C2C29] bg-[#151515] py-20 lg:py-28" aria-labelledby="contact-heading">
+        <section id="Contact" className="scroll-mt-24 border-t border-[#383838] bg-[#151515] py-20 lg:py-28" aria-labelledby="contact-heading">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
             <div className="mb-12 max-w-4xl">
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[#C7F36B]">04 / Connect</p>
-              <h2 id="contact-heading" className="font-display text-4xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#F4F0E8] sm:text-5xl lg:text-7xl">Have an opportunity or idea? Let&apos;s build something meaningful.</h2>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-[#A6A39B]">Recruiters, developers, and collaborators are all welcome. Send a note and I&apos;ll get back to you as soon as I can.</p>
+              <h2 id="contact-heading" className="font-display text-4xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#F5F3EC] sm:text-5xl lg:text-7xl">Have an opportunity or idea? Let&apos;s build something meaningful.</h2>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-[#92918B]">Recruiters, developers, and collaborators are all welcome. Send a note and I&apos;ll get back to you as soon as I can.</p>
             </div>
             <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
               <div className="space-y-3">
-                <a href={LINKS.email} className="arrow-button group flex items-center justify-between rounded-xl border border-[#3B3B37] bg-[#1B1B19] p-5 text-[#F4F0E8] transition hover:-translate-y-1 hover:border-[#C7F36B]"><span className="flex items-center gap-3"><Mail className="text-[#C7F36B]" size={20} aria-hidden="true" /> Email Me</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
-                <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="arrow-button group flex items-center justify-between rounded-xl border border-[#3B3B37] bg-[#1B1B19] p-5 text-[#F4F0E8] transition hover:-translate-y-1 hover:border-[#C7F36B]"><span className="flex items-center gap-3"><Linkedin className="text-[#C7F36B]" size={20} aria-hidden="true" /> LinkedIn</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
-                <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="arrow-button group flex items-center justify-between rounded-xl border border-[#3B3B37] bg-[#1B1B19] p-5 text-[#F4F0E8] transition hover:-translate-y-1 hover:border-[#C7F36B]"><span className="flex items-center gap-3"><Github className="text-[#C7F36B]" size={20} aria-hidden="true" /> GitHub</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
-                <button type="button" onClick={copyEmail} className="flex w-full items-center justify-between rounded-xl border border-dashed border-[#4B4B45] p-4 text-sm text-[#A6A39B] transition hover:border-[#C7F36B] hover:text-[#F4F0E8]"><span>{isCopied ? "Email copied to clipboard" : "Copy email address"}</span>{isCopied ? <Check size={18} className="text-[#C7F36B]" aria-hidden="true" /> : <Clipboard size={18} aria-hidden="true" />}</button>
+                <a href={LINKS.email} className="arrow-button group flex items-center justify-between rounded-xl border border-[#383838] bg-[#292929] p-5 text-[#F5F3EC] transition hover:-translate-y-1 hover:border-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#151515]"><span className="flex items-center gap-3"><Mail className="text-[#C7F36B]" size={20} aria-hidden="true" /> Email Me</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
+                <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="arrow-button group flex items-center justify-between rounded-xl border border-[#383838] bg-[#292929] p-5 text-[#F5F3EC] transition hover:-translate-y-1 hover:border-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#151515]"><span className="flex items-center gap-3"><Linkedin className="text-[#C7F36B]" size={20} aria-hidden="true" /> LinkedIn</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
+                <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="arrow-button group flex items-center justify-between rounded-xl border border-[#383838] bg-[#292929] p-5 text-[#F5F3EC] transition hover:-translate-y-1 hover:border-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#151515]"><span className="flex items-center gap-3"><Github className="text-[#C7F36B]" size={20} aria-hidden="true" /> GitHub</span><ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" size={19} aria-hidden="true" /></a>
+                <button type="button" onClick={copyEmail} className="flex w-full items-center justify-between rounded-xl border border-dashed border-[#383838] p-4 text-sm text-[#92918B] transition hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#151515]"><span>{isCopied ? "Email copied to clipboard" : "Copy email address"}</span>{isCopied ? <Check size={18} className="text-[#C7F36B]" aria-hidden="true" /> : <Clipboard size={18} aria-hidden="true" />}</button>
               </div>
-              <form onSubmit={handleContactSubmit} className="rounded-2xl border border-[#3B3B37] bg-[#1B1B19] p-6 sm:p-8">
+              <form onSubmit={handleContactSubmit} className="rounded-2xl border border-[#383838] bg-[#292929] p-6 sm:p-8">
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="text-sm text-[#A6A39B]">Name<input required name="name" type="text" autoComplete="name" className="mt-2 w-full rounded-lg border border-[#3B3B37] bg-[#151515] px-4 py-3 text-[#F4F0E8] outline-none transition focus:border-[#C7F36B]" /></label>
-                  <label className="text-sm text-[#A6A39B]">Email<input required name="email" type="email" autoComplete="email" className="mt-2 w-full rounded-lg border border-[#3B3B37] bg-[#151515] px-4 py-3 text-[#F4F0E8] outline-none transition focus:border-[#C7F36B]" /></label>
+                  <label className="text-sm text-[#92918B]">Name<input required name="name" type="text" autoComplete="name" className="mt-2 w-full rounded-lg border border-[#383838] bg-[#151515] px-4 py-3 text-[#F5F3EC] outline-none transition focus:border-[#C7F36B]" /></label>
+                  <label className="text-sm text-[#92918B]">Email<input required name="email" type="email" autoComplete="email" className="mt-2 w-full rounded-lg border border-[#383838] bg-[#151515] px-4 py-3 text-[#F5F3EC] outline-none transition focus:border-[#C7F36B]" /></label>
                 </div>
-                <label className="mt-5 block text-sm text-[#A6A39B]">Message<textarea required name="message" rows="5" className="mt-2 w-full resize-y rounded-lg border border-[#3B3B37] bg-[#151515] px-4 py-3 text-[#F4F0E8] outline-none transition focus:border-[#C7F36B]" /></label>
-                <div className="mt-5 flex flex-wrap items-center gap-4"><button type="submit" className="group inline-flex items-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition hover:-translate-y-1 hover:bg-[#D8FF86]">Send message <Send size={17} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></button>{formStatus && <span role="status" className="text-sm text-[#A6A39B]">{formStatus}</span>}</div>
+                <label className="mt-5 block text-sm text-[#92918B]">Message<textarea required name="message" rows="5" className="mt-2 w-full resize-y rounded-lg border border-[#383838] bg-[#151515] px-4 py-3 text-[#F5F3EC] outline-none transition focus:border-[#C7F36B]" /></label>
+                <div className="mt-5 flex flex-wrap items-center gap-4"><button type="submit" className="group inline-flex items-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition hover:-translate-y-1 hover:bg-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">Send message <Send size={17} className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></button>{formStatus && <span role="status" className="text-sm text-[#92918B]">{formStatus}</span>}</div>
               </form>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-gray-800 bg-gray-900 py-12 text-white">
+      <footer className="border-t border-[#383838] bg-[#151515] py-12 text-[#F5F3EC]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex flex-col items-center justify-between gap-6 md:flex-row">
-            <p className="text-2xl font-bold tracking-wider text-emerald-400 lg:text-3xl">
+            <p className="text-2xl font-bold tracking-wider text-[#C7F36B] lg:text-3xl">
               Rathod Uday
             </p>
             <nav aria-label="Footer">
               <ul className="flex flex-wrap justify-center gap-6">
                 {NAV_ITEMS.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="text-gray-300 transition-colors duration-300 hover:text-[#C7F36B]">
+                    <a href={item.href} className="text-[#92918B] transition-colors duration-300 hover:text-[#C7F36B]">
                       {item.label}
                     </a>
                   </li>
@@ -481,8 +484,8 @@ function App() {
             </nav>
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
-            <p className="text-center text-sm text-gray-400 lg:text-base">
+          <div className="border-t border-[#383838] pt-8">
+            <p className="text-center text-sm text-[#92918B] lg:text-base">
               © 2026 Rathod Uday. All rights reserved. Built with React & Tailwind CSS.
             </p>
           </div>
