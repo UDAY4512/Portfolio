@@ -80,8 +80,9 @@ const skillGroups = [
 
 const projects = [
   {
-    visual: "LMS",
     title: "Web-Based LMS",
+    image: "/images/projects/web-based-lms.png",
+    imageAlt: "Editorial illustration of an open book, stacked books, and digital learning pathways",
     featured: true,
     tech: "MongoDB, Express, React, Node.js, JWT, Tailwind CSS",
     description:
@@ -89,8 +90,9 @@ const projects = [
     link: "https://github.com/UDAY4512/learning-management-system",
   },
   {
-    visual: "JK",
     title: "JewelKart",
+    image: "/images/projects/jewelkart.png",
+    imageAlt: "Editorial still life of a gold ring and necklace on dark stone",
     featured: true,
     tech: "React, Node.js, Express, MongoDB, JWT, Cloudinary",
     description:
@@ -98,8 +100,9 @@ const projects = [
     link: "https://github.com/UDAY4512/Jwelercrt",
   },
   {
-    visual: "AI",
     title: "HealthAI",
+    image: "/images/projects/healthai.png",
+    imageAlt: "Editorial illustration of a blank medical document and an AI data orb",
     featured: true,
     tech: "React, Express, Gemini API, Tesseract.js",
     description:
@@ -107,7 +110,6 @@ const projects = [
     link: "https://github.com/UDAY4512/Healthchatbot",
   },
   {
-    img: "https://www.amitree.com/wp-content/uploads/2021/12/what-is-a-task-tracker-and-why-you-need-one.jpeg",
     title: "Task Tracker",
     featured: false,
     tech: "HTML, CSS, JavaScript",
@@ -116,7 +118,6 @@ const projects = [
     link: "https://github.com/UDAY4512/TASK-TRACKER",
   },
   {
-    img: "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg",
     title: "Spotify Clone",
     featured: false,
     tech: "HTML, CSS, JavaScript",
@@ -125,7 +126,6 @@ const projects = [
     link: "https://github.com/UDAY4512/SPOTIFY-CLONE",
   },
   {
-    img: "https://cdn.dribbble.com/userupload/17904218/file/original-1115752d98bab7877e3dddc43f7dbffb.jpeg?resize=1504x1128&vertical=center",
     title: "Portfolio",
     featured: false,
     tech: "React, Vite, Tailwind CSS",
@@ -134,7 +134,6 @@ const projects = [
     link: "https://github.com/UDAY4512/Portfolio",
   },
   {
-    img: "https://media.hudle.in/photos/49940",
     title: "Box Cricket",
     featured: false,
     tech: "JavaScript",
@@ -408,17 +407,18 @@ function App() {
                   key={project.title}
                   className="group flex h-full flex-col rounded-[1.25rem] border border-[#383838] bg-[#292929] p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#C7F36B]/60 sm:p-5"
                 >
-                  <div className="project-placeholder relative mb-5 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-xl border border-[#383838] bg-[#151515] p-5 transition duration-500 group-hover:border-[#C7F36B]/50" role="img" aria-label={`Temporary screenshot placeholder for ${project.title}`}>
-                    {project.image ? (
-                      <img src={project.image} alt={`${project.title} application screenshot`} className="absolute inset-0 h-full w-full object-cover" />
-                    ) : (
-                      <div className="flex flex-col items-center gap-3 text-center">
-                        <span className="grid h-11 w-11 place-items-center rounded-xl border border-[#383838] text-[#C7F36B]"><Code size={20} aria-hidden="true" /></span>
-                        <div><p className="text-sm font-semibold text-[#F5F3EC]">{project.title}</p><p className="mt-1 text-xs text-[#92918B]">Temporary placeholder · replace with screenshot</p></div>
-                      </div>
-                    )}
-                    {project.featured && <span className="absolute right-3 top-3 rounded-full bg-[#C7F36B] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#151515]">Featured</span>}
-                  </div>
+                  {project.image && (
+                    <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-xl border border-[#383838] bg-[#151515] transition-colors duration-300 group-hover:border-[#C7F36B]">
+                      <img
+                        src={project.image}
+                        alt={project.imageAlt}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105"
+                      />
+                      {project.featured && <span className="absolute right-3 top-3 rounded-full bg-[#C7F36B] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#151515]">Featured</span>}
+                    </div>
+                  )}
                   <h3 className="mb-2 text-2xl font-bold text-[#F5F3EC]">{project.title}</h3>
                   <p className="mb-3 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-[#C7F36B]">{project.tech}</p>
                   <p className="mb-6 flex-grow text-sm leading-relaxed text-[#92918B] sm:text-base">
