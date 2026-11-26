@@ -154,14 +154,49 @@ function App() {
     window.setTimeout(() => setIsCopied(false), 2200);
   };
 
-  const handleContactSubmit = (event) => {
-    event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`Portfolio enquiry from ${form.get("name")}`);
-    const body = encodeURIComponent(`Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`);
-    setFormStatus("Opening your email client...");
-    window.location.href = `${LINKS.email}?subject=${subject}&body=${body}`;
-  };
+ 
+const handleContactSubmit = async (event) => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  setFormStatus("Sending message...");
+
+  const formData = new FormData(form);
+
+  formData.append(
+    "access_key",
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+  );
+
+  formData.append(
+    "subject",
+    "New Portfolio Contact Message - Uday Rathod"
+  );
+
+  formData.append("from_name", "Uday Rathod Portfolio");
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      setFormStatus("Message sent successfully! Thank you for contacting me.");
+      form.reset();
+    } else {
+      setFormStatus(
+        result.message || "Unable to send your message. Please try again."
+      );
+    }
+  } catch (error) {
+    setFormStatus(
+      "Network error. Please check your internet connection and try again."
+    );
+  }
+};
 
   const toggleMenu = () => {
     setIsMenuOpen((open) => !open);
@@ -261,9 +296,12 @@ function App() {
                 I build thoughtful, full-stack web experiences with the MERN stack — from clear APIs to interfaces that feel effortless to use.
               </p>
 
-              <div className="animate-fade-up mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start" style={{ "--delay": "360ms" }}>
+              <div className="animate-fade-up mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap lg:justify-start" style={{ "--delay": "360ms" }}>
                 <a href="#Projects" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition-all duration-300 hover:-translate-y-1 hover:bg-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
                   Explore My Work <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                </a>
+                <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#383838] px-6 py-3.5 text-sm font-bold text-[#F5F3EC] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
+                  View CV <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </a>
                 <a href={LINKS.cv} download="Uday-Rathod-Resume.pdf" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#383838] px-6 py-3.5 text-sm font-bold text-[#F5F3EC] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
                   Download CV <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
