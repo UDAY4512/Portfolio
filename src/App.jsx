@@ -32,7 +32,7 @@ const NAV_ITEMS = [
 ];
 
 const LINKS = {
-  cv: "https://drive.google.com/file/d/1IDtUSG2zqI5OL-BI_8JuETnA7s-Erq0S/view",
+  cv: "/resume/Uday-Rathod-Resume.pdf",
   github: "https://github.com/UDAY4512",
   linkedin: "https://www.linkedin.com/in/uday-rathod-9b045931b/",
   leetcode: "https://leetcode.com/u/raud05/",
@@ -265,7 +265,7 @@ function App() {
                 <a href="#Projects" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full bg-[#C7F36B] px-6 py-3.5 text-sm font-bold text-[#151515] transition-all duration-300 hover:-translate-y-1 hover:bg-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
                   Explore My Work <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </a>
-                <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#383838] px-6 py-3.5 text-sm font-bold text-[#F5F3EC] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
+                <a href={LINKS.cv} download="Uday-Rathod-Resume.pdf" className="arrow-button group inline-flex items-center justify-center gap-3 rounded-full border border-[#383838] px-6 py-3.5 text-sm font-bold text-[#F5F3EC] transition-all duration-300 hover:-translate-y-1 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#151515]">
                   Download CV <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </a>
               </div>
