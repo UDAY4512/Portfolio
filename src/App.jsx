@@ -102,7 +102,7 @@ const projects = [
   {
     title: "HealthAI",
     image: "/images/projects/healthai.png",
-    imageAlt: "Editorial illustration of a blank medical document and an AI data orb",
+    imageAlt: "Editorial still life of a stethoscope, anatomical brain model, medical cross, and AI neural network",
     featured: true,
     tech: "React, Express, Gemini API, Tesseract.js",
     description:
@@ -401,8 +401,8 @@ function App() {
               <h2 id="projects-heading" className="font-display text-4xl font-semibold tracking-[-0.06em] text-[#F5F3EC] sm:text-5xl lg:text-6xl">Featured projects.</h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-              {projects.map((project) => (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+              {projects.filter((project) => project.featured).map((project) => (
                 <article
                   key={project.title}
                   className="group flex h-full flex-col rounded-[1.25rem] border border-[#383838] bg-[#292929] p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#C7F36B]/60 sm:p-5"
@@ -431,6 +431,34 @@ function App() {
                     className="group/cta flex w-full items-center justify-center gap-2 rounded-full border border-[#383838] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#F5F3EC] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#292929]"
                   >
                     View on GitHub <ArrowUpRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1" aria-hidden="true" />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="MoreProjects" className="scroll-mt-24 border-t border-[#383838] bg-[#151515] py-14 lg:py-20" aria-labelledby="more-projects-heading">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-8">
+              <h2 id="more-projects-heading" className="font-display text-3xl font-semibold tracking-[-0.05em] text-[#F5F3EC] sm:text-4xl">More Projects</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {projects.filter((project) => !project.featured).map((project) => (
+                <article
+                  key={project.title}
+                  className="group flex h-full flex-col rounded-xl border border-[#383838] bg-[#292929] p-6 transition-colors duration-300 hover:border-[#C7F36B]/60"
+                >
+                  <h3 className="mb-2 text-xl font-bold text-[#F5F3EC]">{project.title}</h3>
+                  <p className="mb-3 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-[#C7F36B]">{project.tech}</p>
+                  <p className="mb-6 flex-grow text-sm leading-relaxed text-[#92918B]">{project.description}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/cta mt-auto flex w-full items-center justify-center gap-2 rounded-full border border-[#383838] px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#F5F3EC] transition-colors duration-300 hover:border-[#C7F36B] hover:text-[#C7F36B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C7F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#292929]"
+                  >
+                    GitHub <ArrowUpRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1" aria-hidden="true" />
                   </a>
                 </article>
               ))}
