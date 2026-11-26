@@ -22,7 +22,7 @@ import { SiTailwindcss, SiExpress, SiMongodb, SiVite } from "react-icons/si";
 const NAV_ITEMS = ["About", "Skills", "Projects", "Contact"];
 
 const LINKS = {
-  cv: "https://drive.google.com/file/d/1IDtUSG2zqI5OL-BI_8JuETnA7s-Erq0S/view",
+  cv: "/resume/Uday-Rathod-Resume.pdf?v=2",
   github: "https://github.com/UDAY4512",
   linkedin: "https://www.linkedin.com/in/uday-rathod-9b045931b/",
   leetcode: "https://leetcode.com/u/raud05/",
